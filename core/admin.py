@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.models import UrlShortcut
+
+
+class UrlShortcutAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(UrlShortcut, UrlShortcutAdmin)

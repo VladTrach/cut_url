@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <form action="/" method="post">
+        {% csrf_token %}
+        <label for="full_url">Privide long URL:</label>
+        <input id="full_url" type="text" name="full_url" value="{{ full_name }}">
+        <input type="submit" value="Cut URL">
+    </form>
+{% endblock content %}

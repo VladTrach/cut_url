@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api import urls as api_urls
+from cut_url_site import urls as site_urls
 
 urlpatterns = [
+    path('', include(site_urls)),
     path('admin/', admin.site.urls),
     path('api/v1/', include(api_urls)),
     path(

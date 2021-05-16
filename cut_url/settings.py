@@ -87,8 +87,12 @@ WSGI_APPLICATION = 'cut_url.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -134,4 +138,4 @@ STATIC_URL = '/static/'
 SHORTCUT_LENGTH = os.environ.get('SHORTCUT_LENGTH')
 if SHORTCUT_LENGTH:
     SHORTCUT_LENGTH = int(SHORTCUT_LENGTH)
-BASE_URL = os.environ.get('BASE_URL')
+BASE_LINK = os.environ.get('BASE_LINK')

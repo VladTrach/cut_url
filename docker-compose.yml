@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:80
+    volumes:
+      - .:/code
+    environment:
+      - BASE_LINK=http://localhost:80
+      - SHORTCUT_LENGTH=10
+    ports:
+      - "80:80"
+    depends_on:
+      - db

@@ -34,5 +34,5 @@ class ShortcutView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ShortcutView, self).get_context_data(**kwargs)
         shortcut = get_shortcut_by_id(kwargs['pk'])
-        context['shortcut_url'] = f'{settings.BASE_URL}/{shortcut}'
+        context['shortcut_url'] = f'{settings.BASE_LINK}/{shortcut}'
         return context

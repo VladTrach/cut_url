@@ -15,3 +15,9 @@ def get_full_url(shortcut: str) -> str:
     shortcuts = models.UrlShortcut.objects.filter(shortcut=shortcut)
     if len(shortcuts) > 0:
         return shortcuts[0].full_url
+
+
+def get_shortcut_by_id(pk: int) -> str:
+    shortcuts = models.UrlShortcut.objects.filter(pk=pk)
+    if len(shortcuts) > 0:
+        return shortcuts[0].shortcut

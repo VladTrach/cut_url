@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'api',
+    'cut_url_site',
 ]
 
 REST_FRAMEWORK = {
@@ -133,3 +134,4 @@ STATIC_URL = '/static/'
 SHORTCUT_LENGTH = os.environ.get('SHORTCUT_LENGTH')
 if SHORTCUT_LENGTH:
     SHORTCUT_LENGTH = int(SHORTCUT_LENGTH)
+BASE_URL = os.environ.get('BASE_URL')

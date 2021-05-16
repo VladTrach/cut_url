@@ -145,6 +145,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 SHORTCUT_LENGTH = os.environ.get('SHORTCUT_LENGTH')
 if SHORTCUT_LENGTH:
     SHORTCUT_LENGTH = int(SHORTCUT_LENGTH)
